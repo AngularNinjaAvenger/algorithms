@@ -7,11 +7,29 @@ class Index {
 			for (int i = 0; i < 10; i++) {
 				list1.add(i);
 			}
-			LinkedList<Integer> list2 = new LinkedList<Integer>();
-			for (int i = 10; i < 20; i++) {
-				list2.add(i);
+			cycle(list1.peek());
+			// LinkedList<Integer> list2 = new LinkedList<Integer>();
+			// for (int i = 10; i < 20; i++) {
+			// 	list2.add(i);
+			// }
+			// mergeLinkedinList(list1,list2);
+		}
+		// CYCLE LINKEDIN LIST
+		/*
+			this uses that sliding window stuffs where your chcekcinf
+			if there is a cycle in the node
+		*/
+		public static boolean cycle(ListNode hea){
+			if (list.isEmpty()) return false;
+			ListNode slow = head;
+			ListNode fast = head;
+
+			while (fast.next != null && fast.next.next != null) {
+				if(fast == null || fast.next == null) return false;
+				slow = slow.next;
+				fast = fast.next.next;
 			}
-			mergeLinkedinList(list1,list2);
+			return true;
 		}
 		// MERGELINKEDLIST
 		/*
