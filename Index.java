@@ -1,36 +1,54 @@
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 class Index {
 		public static void main(final String[] args) {
-			LinkedList<Integer> list1 = new LinkedList<Integer>();
-			for (int i = 0; i < 10; i++) {
-				list1.add(i);
-			}
-			cycle(list1.peek());
+			System.out.println(1^1);
+			System.out.println(1^2);
+			// LinkedList<Integer> list1 = new LinkedList<Integer>();
+			// for (int i = 0; i < 10; i++) {
+			// 	list1.add(i);
+			// }
+			// cycle(list1.peek());
 			// LinkedList<Integer> list2 = new LinkedList<Integer>();
 			// for (int i = 10; i < 20; i++) {
 			// 	list2.add(i);
 			// }
 			// mergeLinkedinList(list1,list2);
+			int found = singleNumber(new int[] {1,2,3,4,5,5,1,1,5,4,2,1,1,1,2});
+			System.out.println(found);
+		}
+		// SINGLE NUMBER
+		/*
+			how you solve this problem is using the bitwise operator
+			^ <--- what this does it evaluate if
+			1^1 <-- this is false
+			1^2 <-- this is true
+			so you make use of this shortut to compare the numbers in the
+			array
+		*/
+		public static int singleNumber(int[] nums){
+			int res = 0;
+			for(int num : nums) {
+				res ^= num;
+			}
+			return res;
 		}
 		// CYCLE LINKEDIN LIST
 		/*
 			this uses that sliding window stuffs where your chcekcinf
 			if there is a cycle in the node
 		*/
-		public static boolean cycle(ListNode hea){
-			if (list.isEmpty()) return false;
-			ListNode slow = head;
-			ListNode fast = head;
-
-			while (fast.next != null && fast.next.next != null) {
-				if(fast == null || fast.next == null) return false;
-				slow = slow.next;
-				fast = fast.next.next;
-			}
-			return true;
-		}
+		// public static boolean cycle(ListNode head){
+		// 	if (list.isEmpty()) return false;
+		// 	ListNode slow = head;
+		// 	ListNode fast = head;
+		// 	while (fast.next != null && fast.next.next != null) {
+		// 		if(fast == null || fast.next == null) return false;
+		// 		slow = slow.next;
+		// 		fast = fast.next.next;
+		// 	}
+		// 	return true;
+		// }
 		// MERGELINKEDLIST
 		/*
 			PATTERN:
