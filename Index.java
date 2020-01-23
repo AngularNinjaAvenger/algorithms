@@ -2,20 +2,28 @@ import java.util.*;
 
 class Index {
 		public static void main(final String[] args) {
-			System.out.println(1^1);
-			System.out.println(1^2);
-			// LinkedList<Integer> list1 = new LinkedList<Integer>();
-			// for (int i = 0; i < 10; i++) {
-			// 	list1.add(i);
-			// }
-			// cycle(list1.peek());
-			// LinkedList<Integer> list2 = new LinkedList<Integer>();
-			// for (int i = 10; i < 20; i++) {
-			// 	list2.add(i);
-			// }
-			// mergeLinkedinList(list1,list2);
-			int found = singleNumber(new int[] {1,2,3,4,5,5,1,1,5,4,2,1,1,1,2});
-			System.out.println(found);
+			System.out.println(validPalindrom("bbibb"));
+		}
+		public static boolean isValid(String parm){
+			Stack<Character> temp = new Stack<Character>();
+			for (int i = 0; i < parm.length(); i++) {
+				char strIdx = parm.charAt(i);
+				char l1 = '(';
+				char l2 = '{';
+				char l3 = '[';
+				char r1 = ')';
+				char r2 = '}';
+				char r3 = ']';
+				if(strIdx == l1 || strIdx == l2 || strIdx == l3){ 
+					temp.add(strIdx);
+				}else{
+					if(strIdx == r1 && temp.peek() == l1)temp.pop();
+					if(strIdx == r2 && temp.peek() == l2)temp.pop();
+					if(strIdx == r3 && temp.peek() == l3)temp.pop();
+				}
+			}
+			if(temp.empty())return true;
+			return false;
 		}
 		// SINGLE NUMBER
 		/*
@@ -38,17 +46,20 @@ class Index {
 			this uses that sliding window stuffs where your chcekcinf
 			if there is a cycle in the node
 		*/
-		// public static boolean cycle(ListNode head){
-		// 	if (list.isEmpty()) return false;
-		// 	ListNode slow = head;
-		// 	ListNode fast = head;
-		// 	while (fast.next != null && fast.next.next != null) {
-		// 		if(fast == null || fast.next == null) return false;
-		// 		slow = slow.next;
-		// 		fast = fast.next.next;
-		// 	}
-		// 	return true;
-		// }
+		/*
+		
+		public static boolean cycle(ListNode head){
+			if (list.isEmpty()) return false;
+			ListNode slow = head;
+			ListNode fast = head;
+			while (fast.next != null && fast.next.next != null) {
+				if(fast == null || fast.next == null) return false;
+				slow = slow.next;
+				fast = fast.next.next;
+			}
+			return true;
+		}
+		*/ 
 		// MERGELINKEDLIST
 		/*
 			PATTERN:
