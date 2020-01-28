@@ -1,3 +1,40 @@
+class Node{
+	constructor(val){
+		this.val = val;
+		this.next = null;
+	}
+}
+
+class LinkedList {
+	constructor(){
+		this.next = null;
+	}
+	insert(val = 10){
+		let new_node = new Node(val);
+		let current = this
+		while(current.next != null){
+			current = current.next;
+		}
+		current.next= new_node;
+		return this;
+	}
+	reverse(){
+		let reversed = null;
+		let head = this;
+		while(this.next != null){
+			let nxt_node = head.next;
+			head
+		}
+		console.log(reversed)
+	}
+}
+
+let x = new LinkedList().insert(20).insert(40).insert(50).insert(60).insert(70).insert(80).insert(90);
+x.reverse()
+
+
+
+
 // WHAT DIJKSTRA ALGORITHM IS IT HELPS TO FIND THE SHORTEST PART 
 
 // OF A GRAPH

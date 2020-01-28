@@ -1,8 +1,66 @@
 import java.util.*;
+import java.util.LinkedList;
+
+
+
 
 class Index {
 		public static void main(final String[] args) {
-			System.out.println(validPalindrom("bbibb"));
+			int[] list = new int[] {1,2,3,4,5};
+			int[] g = twoSum(list,7);
+			System.out.println(g[0]);
+			System.out.println(g[1]);
+			
+		}
+		public static int[] sliceList(int[] ls,int idx){
+			int[] list = {};
+			int ctr = 0;
+			for (int i = idx; i < ls.length; i++) {
+				System.out.println(ctr);
+				list[ctr] = ls[i];
+				ctr++;
+			}
+			return list;
+		}
+		public static int[] threeSum(int[] list, int target) {
+			for (int i = 0; i < list.length;i++) {
+				int[] sliced_list = sliceList(list,i);
+				int complement = target - list[i];
+				try{
+					int[] two = twoSum(sliced_list,complement);
+					two[2] = list[i];
+					return two;
+				}catch (IllegalArgumentException e){}
+			}
+			throw new IllegalArgumentException("can not be calculated");
+		}
+		// TWO SUM
+		/*
+			how it is working it will add all the numbers to map
+			then what it will do is it will check target - list[i] = storedkeyalredy;
+			itwill chcek if it is  
+		*/
+		public static int[] twoSum(int[] list,int target){
+
+			Map<Integer,Integer> match = new HashMap<Integer,Integer>();
+			for (int i = 0; i < list.length; i++) {
+				int complement = target - list[i];
+				if(match.containsKey(complement)){
+					return new int[] {complement,list[i]};
+				}
+				match.put(list[i], i);
+			}
+			throw new IllegalArgumentException("no match found"); 
+		}	
+		public static Node reverseLinkedinList(Node list){
+			Node prev = new Node(0);
+			while( list != null ){
+				Node next_node = list.next;
+				list.next = prev;
+				prev = list;
+				list = next_node;
+			}
+			return prev;
 		}
 		public static boolean isValid(String parm){
 			Stack<Character> temp = new Stack<Character>();
@@ -102,6 +160,18 @@ class Index {
 			return prefix;
 		}
 	}
+
+class Node {
+	int val;
+	Node next = null;
+
+	public Node(int val) {
+		this.val = val;
+	}
+
+}
+
+
 	// MIN STACK
 // PATTERN: 
 	/*
