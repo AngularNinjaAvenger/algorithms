@@ -1,17 +1,14 @@
+import java.lang.invoke.LambdaConversionException;
 import java.util.*;
-import java.util.LinkedList;
 
 
 
 
 class Index {
-		public static void main(final String[] args) {
-			int[] list = new int[] {1,2,3,4,5};
-			int target = 9;
-			int[] found = twoSum(list, target);
-			System.out.println(found[0]);
-			System.out.println(found[1]);
+		public static void main(final String[][] args) {
+			
 		}
+		
 		// TWO SUM TWO
 		/*
 			THIS IS USED IF THE THE ARRAY IS SORTED ELSE USE THE OTHER METHOD
