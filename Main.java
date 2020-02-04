@@ -5,9 +5,24 @@ import java.util.*;
 public class Main {
 
     public static void main(final String[] args) {
-        String list = "aacf";
-        final int res = LongestPalindrome(list);
-        System.out.println(res);
+        int area = containsTheMostWater(new int[] {1,2,3,4,5,6,6});
+        System.out.println(area);
+    }
+    private static int containsTheMostWater(int[] list) {
+        int max_area = 0;
+        int start_pointer = 0;
+        int end_pointer = list.length - 1;
+        while (start_pointer < end_pointer){
+            if(list[start_pointer] > list[end_pointer]){
+                max_area = Math.max(max_area, list[start_pointer]);
+                start_pointer++;
+            }
+            else {
+                max_area = Math.max(max_area, list[end_pointer]);
+                end_pointer--;
+            }
+        }
+        return max_area;
     }
     public static int LongestPalindrome(String letter) {
         int[] list = new int[128];
