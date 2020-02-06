@@ -5,32 +5,38 @@ import java.util.*;
 public class Main {
 
     public static void main(final String[] args) {
-        System.out.print(revStr(new String[] {"b","i","s","h","o","p"})[0]);
+        System.out.println(removeVowel("bishop"));
+    }
+    public static String removeVowel(String str){
+        return str.replaceAll("[aeiou]", "");
     }
     public static int findDuplicateNumber(int[] list){
-        int slow_pointer = 0;
-        int fast_pointer = 0;
-
-        slow_pointer = list[slow_pointer];
-        fast_pointer = list[fast_pointer];
-        
-        while(slow_pointer < fast_pointer){
+        try{
+            int slow_pointer = 0;
+            int fast_pointer = 0;
+    
             slow_pointer = list[slow_pointer];
             fast_pointer = list[fast_pointer];
-        }
-        
-        int a_pointer = slow_pointer;
-        int b_pointer = 0;
-
-        a_pointer = list[a_pointer];
-        b_pointer = list[b_pointer];
-        
-        while(a_pointer != b_pointer){
+            
+            while(slow_pointer < fast_pointer){
+                slow_pointer = list[slow_pointer];
+                fast_pointer = list[fast_pointer];
+            }
+            int a_pointer = slow_pointer;
+            int b_pointer = 0;
+    
             a_pointer = list[a_pointer];
             b_pointer = list[b_pointer];
+            
+            while(a_pointer != b_pointer){
+                a_pointer = list[a_pointer];
+                b_pointer = list[b_pointer];
+            }
+            return a_pointer;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            //TODO: handle exception
         }
-        return a_pointer;
-
+        return -1;
     }
     public static String[] revStr(String[] str){
         if(str.length < 1) return str;
