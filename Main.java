@@ -5,12 +5,34 @@ import java.util.*;
 public class Main {
 
     public static void main(final String[] args) {
-        ListNode  list = new ListNode(10);
-        list.next = new ListNode(20);
-        list.next.next = new ListNode(30);
-        list.next.next.next = new ListNode(40);
-        list.next.next.next.next = new ListNode(50);
-        System.out.println(middleLinkedList(list));
+        List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        System.out.println(fizzBuzz(list));
+    }
+    public static List<String> fizzBuzz(List<Integer> list){
+        List<String> fizzBuzzList = new ArrayList<String>();
+
+        for (int i = 0; i < list.size(); i++) {
+            int num = list.get(i);
+            if ( num % 3 == 0 ) fizzBuzzList.add("fizz");
+            else if( num % 5 == 0 )fizzBuzzList.add("buzz");
+            else fizzBuzzList.add(num + " ");
+        }
+        return fizzBuzzList;
+    }
+    public static int findConsequtiveOnce(int[] list){
+        int max = 0;
+        int cur_cout = 0;
+  
+        for (int i = 0; i < list.length; i++) {
+            if(list[i] == 1){
+                cur_cout++;
+                max = Math.max(cur_cout,max);
+            }
+            else{
+                cur_cout = 0;
+            }
+        }
+        return max;
     }
     // MIDDLE LINKEDIN LIST
     /*
