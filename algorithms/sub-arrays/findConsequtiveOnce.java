@@ -1,4 +1,5 @@
 public static int findConsequtiveOnce(int[] list){
+   
     int max = 0;
     int cur_cout = 0;
 
@@ -12,4 +13,5 @@ public static int findConsequtiveOnce(int[] list){
         }
     }
     return max;
+
 }
