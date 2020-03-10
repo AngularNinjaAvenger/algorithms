@@ -32,16 +32,7 @@ class Index {
 			throw new IllegalArgumentException("can not be calculated");
 		}
 		
-		public static Node reverseLinkedinList(Node list){
-			Node prev = new Node(0);
-			while( list != null ){
-				Node next_node = list.next;
-				list.next = prev;
-				prev = list;
-				list = next_node;
-			}
-			return prev;
-		}
+		
 		public static boolean isValid(String parm){
 			Stack<Character> temp = new Stack<Character>();
 			for (int i = 0; i < parm.length(); i++) {
