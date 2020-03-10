@@ -5,16 +5,31 @@ import java.util.*;
 public class Main {
 
     public static void main(final String[] args) {
-        BinaryTree tree = new BinaryTree();
-        tree.insert(10);
-        tree.insert(20);
-        tree.insert(30);
-        tree.insert(40);
-        tree.insert(50);
-        tree.insert(60);
-        System.out.println(tree.string());
-
+        System.out.println(findMaximumSumSubArray(new int[] {1,2,3,4,5,5,6,7,8,9,10},2));
     }
+    // now what were doing here is we are using the sliding window 
+    // check what is the minimum number of calulcation to get
+    // a sum that is greater than the target eg
+    //  [1,2,3,4,5,1,2] target 4 so we can do (2+1+1) but we can also
+    // do 2+2 <-- so the minimum we have to calculate now is 2
+
+    public static int SmallestSubArray(int[] list, int target) {
+        int min = 0;
+        int startPtr = 0;
+        int sum = 0;
+        for (int endPtr = 0; endPtr < list.length; endPtr++) {
+            sum+=list[endPtr];
+            while(sum >= target){ // <-- the purpose of this array is to srink the sub part 
+                                 //      donw since we are tring to get the min sub array
+                min = Math.min(min,( endPtr - startPtr ) + 1 ); // this is how to get the min
+                sum-= list[startPtr]; // <--- adjusting the pointer
+                startPtr++; // <-- this is how you srink the sum
+            }
+        }
+        return min;
+    }
+
+
 // now what sliding window is is something line when your woring with a list
 // and your iterating instead of using bruth force approach of looping over
 //  each item in the list what you do is you
@@ -22,21 +37,19 @@ public class Main {
 // when to use sliding window
 // 1. when woring with list
 // 2. min max contains problems 
-// 
 
-    public int findMaximumSubArray(int[] list, int target) {
+    public static int findMaximumSumSubArray(int[] list, int target) {
         int max = 0;
-        int cur = 0;
-        int ctr = 0; 
-        for (int i = 0; i < list.length; i++) {
-            
-            ctr+=list[i];
+        int curSum = 0;
 
-            if(ctr == target){
-                max = Math.max(cur,max);
-                ctr = 0;
-            }else{
-                ctr++;
+        for (int i = 0; i < list.length; i++) {
+            curSum+=list[i];
+            if(i >= (target  - 1)){  // <--- thin if this if condition as the base case for starting the iteration
+                                    // to make sure that we start at the target index
+                max = Math.max(curSum,max); // and here we are comparing to get the max
+                curSum-=list[i-(target-1)]; // <-- what were are doing here is the slide we are we are removing the value
+                                       // of the first item and so the next iteraion can add the next item
+                                      // eg [1 2 3 6 ] 1+2+3 = 4 for us to slide and add 2 + 3 + 6 we need to subtract 1
             }
         }
         return max;
