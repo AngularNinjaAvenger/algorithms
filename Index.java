@@ -33,63 +33,9 @@ class Index {
 		}
 		
 	
-		// SINGLE NUMBER
-		/*
-			how you solve this problem is using the bitwise operator
-			^ <--- what this does it evaluate if
-			1^1 <-- this is false
-			1^2 <-- this is true
-			so you make use of this shortut to compare the numbers in the
-			array
-		*/
-		public static int singleNumber(int[] nums){
-			int res = 0;
-			for(int num : nums) {
-				res ^= num;
-			}
-			return res;
-		}
-		// CYCLE LINKEDIN LIST
-		/*
-			this uses that sliding window stuffs where your chcekcinf
-			if there is a cycle in the node
-		*/
-		/*
+	
 		
-		public static boolean cycle(ListNode head){
-			if (list.isEmpty()) return false;
-			ListNode slow = head;
-			ListNode fast = head;
-			while (fast.next != null && fast.next.next != null) {
-				if(fast == null || fast.next == null) return false;
-				slow = slow.next;
-				fast = fast.next.next;
-			}
-			return true;
-		}
-		*/ 
-		// MERGELINKEDLIST
-		/*
-			PATTERN:
-				it like that merge in merge sort but this time your making use of a
-				linkedin list and it comes inbuilt with java so you dont need to
-				make use of x y for tracking
-		*/
-		public static LinkedList<Integer> mergeLinkedinList (LinkedList<Integer> l1,LinkedList<Integer> l2){
-			LinkedList<Integer> joinList = new LinkedList<Integer>();
-			while(l1.peekFirst()  != null && l2.peekFirst() != null){
-				if(l1.getFirst() < l2.getFirst())joinList.add(l1.pop());
-				else joinList.add(l2.get(l1.pop()));
-			}
-			while (l1.peekFirst() != null){
-				joinList.add(l1.pop());
-			}
-			while (l2.peekFirst() != null){
-				joinList.add(l2.pop());
-			}
-			System.out.println(joinList);
-			return joinList;
-		} 
+		
 		// lONGTEST COMMON PREFIX
 		/*
 			PATTERN:
