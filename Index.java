@@ -1,4 +1,3 @@
-import java.lang.invoke.LambdaConversionException;
 import java.util.*;
 
 
@@ -66,7 +65,6 @@ class Index {
 			itwill chcek if it is  
 		*/
 		public static int[] twoSum(int[] list,int target){
-
 			Map<Integer,Integer> match = new HashMap<Integer,Integer>();
 			for (int i = 0; i < list.length; i++) {
 				int complement = target - list[i];

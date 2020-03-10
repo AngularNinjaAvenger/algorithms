@@ -5,9 +5,45 @@ import java.util.*;
 public class Main {
 
     public static void main(final String[] args) {
-        List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-        System.out.println(fizzBuzz(list));
+        BinaryTree tree = new BinaryTree();
+        tree.insert(10);
+        tree.insert(20);
+        tree.insert(30);
+        tree.insert(40);
+        tree.insert(50);
+        tree.insert(60);
+        System.out.println(tree.string());
+
     }
+// now what sliding window is is something line when your woring with a list
+// and your iterating instead of using bruth force approach of looping over
+//  each item in the list what you do is you
+// use a set to loop over
+// when to use sliding window
+// 1. when woring with list
+// 2. min max contains problems 
+// 
+
+    public int findMaximumSubArray(int[] list, int target) {
+        int max = 0;
+        int cur = 0;
+        int ctr = 0; 
+        for (int i = 0; i < list.length; i++) {
+            
+            ctr+=list[i];
+
+            if(ctr == target){
+                max = Math.max(cur,max);
+                ctr = 0;
+            }else{
+                ctr++;
+            }
+        }
+        return max;
+    }
+
+
+
     public static List<String> fizzBuzz(List<Integer> list){
         List<String> fizzBuzzList = new ArrayList<String>();
 
@@ -118,22 +154,6 @@ public class Main {
         }
         return str;
     }
-    private static int containsTheMostWater(int[] list) {
-        int max_area = 0;
-        int start_pointer = 0;
-        int end_pointer = list.length - 1;
-        while (start_pointer < end_pointer){
-            if(list[start_pointer] > list[end_pointer]){
-                max_area = Math.max(max_area, list[start_pointer]);
-                start_pointer++;
-            }
-            else {
-                max_area = Math.max(max_area, list[end_pointer]);
-                end_pointer--;
-            }
-        }
-        return max_area;
-    }
     public static int LongestPalindrome(String letter) {
         int[] list = new int[128];
         // WHAT WE ARE DOING HERE IS WITH THE CHAR
@@ -163,5 +183,56 @@ class ListNode {
 
     public ListNode(int value) {
         this.value = value;
+    }
+}
+
+class Node {
+    public Node left;
+    public int value;
+    public Node right;
+    
+    @Override
+    public String toString() {
+        return "Node [left=" + left + ", right=" + right + ", value=" + value + "]";
+    }
+
+    public Node(int value) {
+        this.value = value;
+    }
+    
+}
+
+class BinaryTree {
+    private Node root;
+    public void insert(int value){
+        Node new_node = new Node(value);
+
+        if(root == null){
+            root = new_node;
+        }else{
+            Node current = root;
+            while (true){
+                if(current.value == value)break;
+                if(current.value > value){
+                    if(current.right == null){
+                        current.right = new_node;
+                    }else{
+                        current = current.right;
+                    }
+                }
+                else{
+                    if(current.left == null){
+                        current.left = new_node;
+                    }else{
+                        current = current.left;
+                    }
+                };
+            }
+            
+        }
+
+    }    
+    public String string(){
+        return root.toString();
     }
 }
