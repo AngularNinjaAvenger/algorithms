@@ -1,73 +1,12 @@
-import java.util.*;
 /**
  * Main
  */
 public class Main {
 
     public static void main(final String[] args) {
-        System.out.println(findMaximumSumSubArray(new int[] {1,2,3,4,5,5,6,7,8,9,10},2));
+
     }
-    // now what were doing here is we are using the sliding window 
-    // check what is the minimum number of calulcation to get
-    // a sum that is greater than the target eg
-    //  [1,2,3,4,5,1,2] target 4 so we can do (2+1+1) but we can also
-    // do 2+2 <-- so the minimum we have to calculate now is 2
-
-    public static int SmallestSubArray(int[] list, int target) {
-        int min = 0;
-        int startPtr = 0;
-        int sum = 0;
-        for (int endPtr = 0; endPtr < list.length; endPtr++) {
-            sum+=list[endPtr];
-            while(sum >= target){ // <-- the purpose of this array is to srink the sub part 
-                                 //      donw since we are tring to get the min sub array
-                min = Math.min(min,( endPtr - startPtr ) + 1 ); // this is how to get the min
-                sum-= list[startPtr]; // <--- adjusting the pointer
-                startPtr++; // <-- this is how you srink the sum
-            }
-        }
-        return min;
-    }
-
-
-// now what sliding window is is something line when your woring with a list
-// and your iterating instead of using bruth force approach of looping over
-//  each item in the list what you do is you
-// use a set to loop over
-// when to use sliding window
-// 1. when woring with list
-// 2. min max contains problems 
-
-    public static int findMaximumSumSubArray(int[] list, int target) {
-        int max = 0;
-        int curSum = 0;
-
-        for (int i = 0; i < list.length; i++) {
-            curSum+=list[i];
-            if(i >= (target  - 1)){  // <--- thin if this if condition as the base case for starting the iteration
-                                    // to make sure that we start at the target index
-                max = Math.max(curSum,max); // and here we are comparing to get the max
-                curSum-=list[i-(target-1)]; // <-- what were are doing here is the slide we are we are removing the value
-                                       // of the first item and so the next iteraion can add the next item
-                                      // eg [1 2 3 6 ] 1+2+3 = 4 for us to slide and add 2 + 3 + 6 we need to subtract 1
-            }
-        }
-        return max;
-    }
-
-
-
-    public static List<String> fizzBuzz(List<Integer> list){
-        List<String> fizzBuzzList = new ArrayList<String>();
-
-        for (int i = 0; i < list.size(); i++) {
-            int num = list.get(i);
-            if ( num % 3 == 0 ) fizzBuzzList.add("fizz");
-            else if( num % 5 == 0 )fizzBuzzList.add("buzz");
-            else fizzBuzzList.add(num + " ");
-        }
-        return fizzBuzzList;
-    }
+ 
     public static int findConsequtiveOnce(int[] list){
         int max = 0;
         int cur_cout = 0;
