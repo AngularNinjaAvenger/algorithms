@@ -1,9 +1,15 @@
 class Node {
-	int val;
-	Node next = null;
+    public Node left;
+    public int value;
+    public Node right;
+    
+    @Override
+    public String toString() {
+        return "Node [left=" + left + ", right=" + right + ", value=" + value + "]";
+    }
 
-	public Node(int val) {
-		this.val = val;
-	}
-
+    public Node(int value) {
+        this.value = value;
+    }
+    
 }
