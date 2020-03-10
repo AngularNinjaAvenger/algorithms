@@ -6,48 +6,6 @@ public class Main {
     public static void main(final String[] args) {
 
     }
- 
-    
-    // MIDDLE LINKEDIN LIST
-    /*
-        how this works , a fast pointer will be moving twise the speed of
-        a slower pointer then by the time the fast ppointer is at the 
-        end of the list the slow pointer will be at the middle of the list
-        and it will be returned
-    */
-    public static ListNode middleLinkedList(ListNode head){
-        ListNode slow_pointer = head;
-        ListNode fast_pointer = head;
-        while(slow_pointer.next != null && fast_pointer.next.next != null)
-        {
-            slow_pointer = slow_pointer.next;
-            fast_pointer = fast_pointer.next.next;
-        }   
-        return slow_pointer;
-    }
-    // LEFT POINTER
-    /*
-        now how this algorithm works is your checking to see if any array
-        has an idx that all the left sum == right sum to do this
-        we first get the total sum, then we loop againg 
-        subtracting - lft_ptr - currentarrayidx = lft_ptr 
-        there is a povit if not there is no povit.
-    */
-    public static boolean findPovit(int[] list){
-        int total = 0;
-        for (int i : list) {
-            total+=i;
-        }
-        int left_pointer = 0;
-        for (int i : list) {
-            System.out.println(total - left_pointer - i);
-            if((total - left_pointer - i) == left_pointer){
-                return true;
-            }
-            left_pointer+=i;
-        }
-        return false;   
-    }
     public static String removeVowel(String str){
         return str.replaceAll("[aeiou]", "");
     }
