@@ -8,34 +8,7 @@ class Index {
 			
 		}
 		
-		// TWO SUM TWO
-		/*
-			THIS IS USED IF THE THE ARRAY IS SORTED ELSE USE THE OTHER METHOD
-			WHEN YOU DOING ANY PROBLEM THAT HAS TO DO WITH SORTED ARRAYS USE A POINTER
-			note how this works, what it does is , it uses a pointer
-			so how this pointer works one will start from the begining 
-			of the array the other will start from ary.length 
-
-			
-		*/
-		public static int[] twosum_two(int[] lst,int idx){
-			int a_pointer = 0;
-			int b_pointer = lst.length - 1;
-			while(a_pointer < b_pointer){
-				/*
-					this will keep loop and adjusting the pointers
-					until it finds a match else it return null
-				*/
-				int sum = lst[a_pointer] + lst[b_pointer];
-
-				if(sum > idx)b_pointer--;
-				else if (sum < idx)a_pointer++;
-				// this is the base case that returns the array of the found items
-
-				else return new int[] {lst[a_pointer],lst[b_pointer]};
-			}
-			return new int[] {};
-		}
+		
 		public static int[] sliceList(int[] ls,int idx){
 			int[] list = {};
 			int ctr = 0;
@@ -58,23 +31,7 @@ class Index {
 			}
 			throw new IllegalArgumentException("can not be calculated");
 		}
-		// TWO SUM
-		/*
-			how it is working it will add all the numbers to map
-			then what it will do is it will check target - list[i] = storedkeyalredy;
-			itwill chcek if it is  
-		*/
-		public static int[] twoSum(int[] list,int target){
-			Map<Integer,Integer> match = new HashMap<Integer,Integer>();
-			for (int i = 0; i < list.length; i++) {
-				int complement = target - list[i];
-				if(match.containsKey(complement)){
-					return new int[] {complement,list[i]};
-				}
-				match.put(list[i], i);
-			}
-			throw new IllegalArgumentException("no match found"); 
-		}	
+		
 		public static Node reverseLinkedinList(Node list){
 			Node prev = new Node(0);
 			while( list != null ){
