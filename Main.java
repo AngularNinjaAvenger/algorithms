@@ -7,38 +7,8 @@ public class Main {
     public static void main(final String[] args) {
         
     }
-    public static int[] findAllMissingNumber() {
-        int[] ms = new int[] {};
-        int min , int max;
-        int[] list = new int[] {1,2,3,4,5,6};
-        for (int i = 0; i < list.length; i++) {
-            min = Math.min(list[i],min); 
-            max = Math.max(list[i],max); 
-        }
-        int prev = max;
-        for (int j = list.length; j > 0; j--) {
-            for (int j2 = prev; j2 < list[j]; j2++) {
-                ms[ms.length < 1 ? 0 : ms.length-1 ] = prev+j2;
-            }
-        }
-
-        return null;
-    }
-    public static int[] findShortestSubArrayToSortAList(int[] list) {
-        // this clones the list by defrencing the poitner
-        // and giving it a new pointer location
-        int[] sortedList = list.clone();
-        Arrays.sort(sortedList);
-        int sPtr = sortedList.length,ePtr = 0;
-        for (int i = 0; i < sortedList.length; i++) {
-            if(sortedList[i] != list[i]){
-                sPtr = Math.min(sPtr,i);
-                ePtr = Math.max(ePtr,i);
-            }
-        }
-        
-        return null;
-    }
+    
+    
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
         for (int i = 0; i < list.length; i++) {
