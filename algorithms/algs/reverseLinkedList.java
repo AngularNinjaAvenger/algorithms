@@ -14,7 +14,7 @@ public static int[] reverseLinkedList() {
     // 4 -> 5 ->
     //
     // 
-    // 1 -> 2 -> 4 -> 5 ->
+    
     /**
      * new_list = list.head 
      * iterate over list.next
@@ -24,4 +24,16 @@ public static int[] reverseLinkedList() {
      *      new_list = temp
      */
     return null;        
-}
+} 
+
+
+// head 1 -> 2 -> 4 -> 5 ->
+// temp_head  2 -> 4 -> 5 ->
+/**
+ * prev = 2 -> null
+    iterate over head
+        next_node = head.next 4 -> 5 ->
+        head.next = prev 4 -> null
+        prev = head 4 -> null
+        head = next_node 4 -> 5 ->
+ */

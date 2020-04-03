@@ -1,16 +1,8 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Main {
 
     public static void main(final String[] args) {
-
+        
     }
-    
-    
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
         for (int i = 0; i < list.length; i++) {
