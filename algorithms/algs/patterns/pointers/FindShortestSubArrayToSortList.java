@@ -1,6 +1,7 @@
 public static int[] findShortestSubArrayToSortAList(int[] list) {
     // this clones the list by defrencing the poitner
-    // and giving it a new pointer location
+    // and giving the copied list items a new pointer 
+    // location
     int[] sortedList = list.clone();
     Arrays.sort(sortedList);
     int sPtr = sortedList.length,ePtr = 0;
@@ -13,3 +14,10 @@ public static int[] findShortestSubArrayToSortAList(int[] list) {
     
     return null;
 }
+
+/**
+ * [4,2,5,3]
+ * 
+ * [2,3,4,5]
+ * 
+ */
