@@ -1,4 +1,4 @@
-public static int[] findAllMissingNumber() {
+public static int[] findingSumsMatch() {
     int[] ms = new int[] {};
     int min;
     int max;
