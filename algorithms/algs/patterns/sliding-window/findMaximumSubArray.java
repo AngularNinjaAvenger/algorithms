@@ -1,7 +1,6 @@
 // now what sliding window is is something line when your woring with a list
 // and your iterating instead of using bruth force approach of looping over
-//  each item in the list what you do is you
-// use a set to loop over
+//  each item in the list what you do is you use a set to loop over
 // when to use sliding window
 // 1. when woring with list
 // 2. min max contains problems 
