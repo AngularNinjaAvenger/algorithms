@@ -1,13 +1,39 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Main {
 
     public static void main(final String[] args) {
-
+        String res = groupAnagram(new String[] {"cat","pat","mat","sat","fat","map","cap"}).toString();
+        System.out.println(res);
     }
     public static String[][] groupAnagram(String[] list){
-        return null;
+        Map<String,String[]> store = new HashMap<String,String[]>();
+        for (int i = 0; i < list.length; i++) {
+            char[] chars = list[i].toCharArray();
+            String currentWord = chars.toString();
+            char[] SortedWordList = chars.clone(); 
+            Arrays.sort(SortedWordList);
+            String sortedWord = SortedWordList.toString();
+            if(!store.containsKey(sortedWord)){
+                store.put(sortedWord,new String[] {currentWord});
+            }else{
+                String[] tempList = store.get(sortedWord);
+                tempList[tempList.length] = currentWord;
+            }
+        }
+        String[][] result = new String[store.size()][];
+        int idx = 0;
+        for (String item : store.keySet()) {
+            result[idx] = store.get(item);
+            idx++;
+        }
+        return result;
     }
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
