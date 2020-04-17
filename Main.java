@@ -12,29 +12,7 @@ public class Main {
         String res = groupAnagram(new String[] {"cat","pat","mat","sat","fat","map","cap"}).toString();
         System.out.println(res);
     }
-    public static String[][] groupAnagram(String[] list){
-        Map<String,String[]> store = new HashMap<String,String[]>();
-        for (int i = 0; i < list.length; i++) {
-            char[] chars = list[i].toCharArray();
-            String currentWord = chars.toString();
-            char[] SortedWordList = chars.clone(); 
-            Arrays.sort(SortedWordList);
-            String sortedWord = SortedWordList.toString();
-            if(!store.containsKey(sortedWord)){
-                store.put(sortedWord,new String[] {currentWord});
-            }else{
-                String[] tempList = store.get(sortedWord);
-                tempList[tempList.length] = currentWord;
-            }
-        }
-        String[][] result = new String[store.size()][];
-        int idx = 0;
-        for (String item : store.keySet()) {
-            result[idx] = store.get(item);
-            idx++;
-        }
-        return result;
-    }
+    
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
         for (int i = 0; i < list.length; i++) {
