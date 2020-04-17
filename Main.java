@@ -6,6 +6,9 @@ public class Main {
     public static void main(final String[] args) {
 
     }
+    public static String[][] groupAnagram(String[] list){
+        return null;
+    }
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
         for (int i = 0; i < list.length; i++) {
