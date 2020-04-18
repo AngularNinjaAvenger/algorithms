@@ -9,25 +9,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(final String[] args) {
-        String res = reArrangeString("bishop");
-        System.out.println(res);
-    }
-    public static String reArrangeString(String s){
-        char[] lst = s.toCharArray();
-        char[] dp = new char[s.length()];
-        dp[0] = lst[0];
-        dp[1] = lst[1];
-        StringBuilder match = new StringBuilder();
-        for (int i = 2; i < dp.length; i++) {
-            dp[i] = lst[i];
-            if( dp[i-1] == dp[i-2] && dp[i] != dp[i-1]){
-                match.append(dp[i-1]);
-                match.append(dp[i]);
-                match.append(dp[i-2]);
-                return match.toString();
-            }
-        }
-        return "";
+            
     }
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
