@@ -5,14 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+//  NOTE MAKE SURE TO LOOK UP JAVA SHCEAT SHEET FOR EACH OF YOUR NOTES
 public class Main {
 
     public static void main(final String[] args) {
-        String res = groupAnagram(new String[] {"cat","pat","mat","sat","fat","map","cap"}).toString();
-        System.out.println(res);
+        
     }
-    
+    public static String reArrangeString(String s){
+        return "";
+    }
     public static int[][] list(int[][] list,int[] new_time) {
         int[] previous_time = list[0];
         for (int i = 0; i < list.length; i++) {
