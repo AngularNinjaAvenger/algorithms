@@ -9,7 +9,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(final String[] args) {
-        String res = reArrangeString("bisshop");
+        String res = reArrangeString("bishop");
         System.out.println(res);
     }
     public static String reArrangeString(String s){
@@ -18,7 +18,7 @@ public class Main {
         dp[0] = lst[0];
         dp[1] = lst[1];
         StringBuilder match = new StringBuilder();
-        for (int i = 2; i < dp.length + 1; i++) {
+        for (int i = 2; i < dp.length; i++) {
             dp[i] = lst[i];
             if( dp[i-1] == dp[i-2] && dp[i] != dp[i-1]){
                 match.append(dp[i-1]);
