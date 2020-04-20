@@ -5,16 +5,47 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import jdk.nashorn.api.tree.BinaryTree;
 //  NOTE MAKE SURE TO LOOK UP JAVA SHCEAT SHEET FOR EACH OF YOUR NOTES
 public class Main {
 
     public static void main(final String[] args) {
 
     }
-    public static void deleteNodeAndReturnForrest(){
-        
+    /**
+     * your going to be removing node values from a tree and keep the 
+     * child node's reference,returning what's is left in the tree, 
+     * which will now become a forest
+     * 
+     * we are going to be taking a dept first approach, because we cannot
+     * move from the top to the bottom we'll lose refrence to it
+     * 
+     *  
+     */
+    public static TreeNode deleteNodeAndReturnForrest(TreeNode tree,int[] toBeRemoved){
     }
-    
+/**
+ * 
+ *              11
+        7  10         8 13  
+    7  10   8 13  7  10   8 13  
+ * 
+ * 
+ */
+   
+
+
+    public static TreeNode triverse(TreeNode tree,Map<Integer,Boolean> store){
+        if(tree == null) return null;
+        int left = tree.left.value;
+        int right = tree.right.value;
+        if(store.get(left))tree.removeLeft();
+        if(store.get(right))tree.removeRight();
+        tree.left = triverse(tree.left,store);
+        tree.right = triverse(tree.right,store);
+        return tree;
+    }
 }
 // NOTE ALWAYS CALCULATE THE RUNTIME COMPLEXITY OF THE ALGORTIHM 
 // AFTER COMPLETION
