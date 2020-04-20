@@ -13,13 +13,17 @@ public class Main {
     public static void main(final String[] args) {
 
     }
+
     /**
      * your going to be removing node values from a tree and keep the 
      * child node's reference,returning what's is left in the tree, 
      * which will now become a forest
      * 
      * we are going to be taking a dept first approach, because we cannot
-     * move from the top to the bottom we'll lose refrence to it
+     * move from the top to the bottom we'll lose refrence to it child nodes
+     * 
+     * so by the time we get to the bottom of the tree we now keep a list 
+     * where we'll bestoring the remaining nodes that are not in the list
      * 
      *  
      */
