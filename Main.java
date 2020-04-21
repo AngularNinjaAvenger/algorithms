@@ -16,20 +16,20 @@ public class Main {
     public static void main(final String[] args) {
 
     }
-
-
-
-    public static TreeNode triverse(TreeNode tree,Map<Integer,Boolean> store){
-        if(tree == null) return null;
-        int left = tree.left.value;
-        int right = tree.right.value;
-        if(store.get(left))tree.removeLeft();
-        if(store.get(right))tree.removeRight();
-        tree.left = triverse(tree.left,store);
-        tree.right = triverse(tree.right,store);
-        return tree;
+    public static List<Integer> binaryTreeLongestConsequtiveSequene(TreeNode tree){
+        
     }
 }
+// public static TreeNode triverse(TreeNode tree,Map<Integer,Boolean> store){
+//     if(tree == null) return null;
+//     int left = tree.left.value;
+//     int right = tree.right.value;
+//     if(store.get(left))tree.removeLeft();
+//     if(store.get(right))tree.removeRight();
+//     tree.left = triverse(tree.left,store);
+//     tree.right = triverse(tree.right,store);
+//     return tree;
+// }
 // NOTE ALWAYS CALCULATE THE RUNTIME COMPLEXITY OF THE ALGORTIHM 
 // AFTER COMPLETION
 
