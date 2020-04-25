@@ -1,14 +1,9 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-
-
-
-
-
 public class Main {
     public static void main(final String[] args) {
-
+        
     }
    
 }
