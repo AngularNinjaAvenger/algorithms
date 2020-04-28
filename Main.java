@@ -5,7 +5,18 @@ public class Main {
     public static void main(final String[] args) {
         
     }
-   
+    /**
+     * input coins [5,5,2] ammount 11
+     * solution  = 5 + 5 + 1
+     * output 3
+     * your finding the smalling summ that 
+     * returns that ammount
+     * 
+     * we are going to be using dp to solve this,
+     * by filling it with smallest ammount of coin to
+     * fill the particula index then when we get to the end
+     * which will be the ammount we just return it 
+     */
     public static int ConinChange(int[] opt,int target){
         return null;
    }
