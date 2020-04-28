@@ -6,6 +6,10 @@ public class Main {
         
     }
    
+    public static int ConinChange(int[] opt,int target){
+        return null;
+   }
+
 }
 
 // NOTE ALWAYS CALCULATE THE RUNTIME COMPLEXITY OF THE ALGORTIHM 
