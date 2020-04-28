@@ -17,9 +17,26 @@ public class Main {
      * fill the particula index then when we get to the end
      * which will be the ammount we just return it 
      */
-    public static int ConinChange(int[] opt,int target){
-        return null;
-   }
+    // dp => [0,9,9,9,9,9,9,9,9]
+    //        1,2,4, 8
+    
+    //  1,2,4, 8
+
+    public static int ConinChange(int[] coins,int ammount){
+        int[] dp = new int[ ammount + 1 ];
+        Arrays.fill(dp,ammount+1);        
+        dp[0] = 0;
+        for (int i = 0; i < ammount; i++) {
+            for (int j = 0; j < coins.length; j++) {
+                if(coins[j] <= i){
+                    dp[i] = Math.min(dp[i], dp[ i - coins[j] ]);
+                }   
+            }
+        }
+
+        return dp[ammount] > ammount ? -1 : dp[ammount];
+   
+    }
 
 }
 
