@@ -3,12 +3,27 @@ import java.util.*;
 
 public class Main {
     public static void main(final String[] args) {
+        int[] list = new int[] {1,2,3,4,3};
+        int target  = 7;
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         
+        combinationSum(list,0,target,result);
+
+        System.out.println(result);
     }
-    public static int[][] combinationSum(int[] list ,int target){
-        
-        
-        
+    /**
+     *  list = [1,2,3,4,3]
+     * target = 7
+     * 
+     * output = [
+     *      [3,3,1],
+     *      [4,3],
+     *      [4,2,1],
+     * ]
+     * 
+     * NOTE:there must be no duplucate
+     */
+    public static int[][] combinationSum(int[] list ,int current,int target,List<List<Integer>> reult){
 
         return null;
 
