@@ -9,9 +9,9 @@
      * by filling it with smallest ammount of coin to
      * fill the particula index then when we get to the end
      * which will be the ammount we just return it 
-     */
-    // dp => [0,9,9,9,9,9,9,9,9]
-    //        1,2,4, 8
+     */           2
+    // dp => [0,0,0,9,9,9,9,9,9]
+    //            2,4, 8              
     
     //  1,2,4, 8
 
