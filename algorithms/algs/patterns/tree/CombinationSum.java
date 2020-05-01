@@ -50,6 +50,9 @@ public class CombinationSum {
             if( i == idx || list[i] != list[i -1]){
                 currentList.add(list[i]);
                 combinationSum(list,idx + 1,currentList,result,target - list[i]);
+                // we are simulating not picking the current item becuase
+                // if the recursion above is completed then we dont come back here
+                // not pick this the continue the recursions again
                 if (!currentList.isEmpty()) currentList.remove( currentList.size() - 1 );
             }
         }
