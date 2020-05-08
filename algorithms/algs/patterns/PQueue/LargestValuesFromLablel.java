@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class Main {
+public class LargestValuesFromLablel {
     public static void main(String[] args) {
         int[] values = new int[] {5,4,3,2,1};
         int[] labels = new int[] {1,1,2,2,3};
